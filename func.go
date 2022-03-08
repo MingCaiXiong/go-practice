@@ -56,5 +56,20 @@ func main() {
 	println("---------函数式编程---------")
 
 	fmt.Println(apply(pow, 2, 3))
+	println("---------匿名函数---------")
+	fmt.Println(apply(func(a int, b int) int {
+		return int(math.Pow(float64(a), float64(b)))
+	}, 3, 4))
 
+	println("---------可变参数列表---------")
+
+	println(sum(1, 2, 3, 4, 5))
+
+}
+func sum(numbers ...int) int {
+	s := 0
+	for i := range numbers {
+		s += numbers[i]
+	}
+	return s
 }
